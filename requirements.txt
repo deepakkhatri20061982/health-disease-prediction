@@ -1,0 +1,8 @@
+mlflow
+scikit-learn
+pandas
+numpy
+notebook
+nbconvert
+ipykernel
+joblib
