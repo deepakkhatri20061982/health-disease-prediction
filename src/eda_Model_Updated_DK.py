@@ -459,8 +459,7 @@ with mlflow.start_run(run_name="LogisticRegression_GridSearch_" + datetime_strin
         artifact_path="logRegModel"
     )
 
-    joblib.dump(logreg_gs.best_estimator_,
-                "../../../../../../../Users/Deepak Khatri/Documents/MLOPS_Assignment_1/MODELS/logRegModel.pkl")
+    joblib.dump(logreg_gs.best_estimator_, "logRegModel.pkl")
     mlflow.log_artifact("logRegModel.pkl")
 
 
@@ -630,7 +629,7 @@ cv_report("Random Forest",      rf_cv)
 import pickle
 
 # Save model as PKL
-with open("../../../../../../../Users/Deepak Khatri/Documents/MLOPS_Assignment_1/MODELS/logreg_model.pkl", "wb") as f:
+with open("logreg_model.pkl", "wb") as f:
     pickle.dump(lr_best, f)
 
 print("Best model saved as logreg_model.pkl")
