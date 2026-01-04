@@ -1,10 +1,4 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.10'
-        }
-    }
-
     stages {
         stage("Install Dependencies") {
             steps {
@@ -14,5 +8,14 @@ pipeline {
                 """
             }
         }
-    }
+        stage('Verify Python Version') {
+            steps {
+                sh '''
+                python --version
+                which python
+                pip --version
+                '''
+            }
+        }
+    }   
 }
