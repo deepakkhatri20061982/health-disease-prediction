@@ -19,5 +19,10 @@ pipeline {
                 '''
             }
         }
+        stage('Model Training') {
+            steps {
+                sh 'python src/eda_Model_Updated_DK.py'
+            }
+        }
     }   
 }
