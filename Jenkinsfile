@@ -27,12 +27,7 @@ pipeline {
         stage('Run Unit Tests') {
             steps {
                 sh '''
-                    pytest -v \
-                           --disable-warnings \
-                           --maxfail=1 \
-                           --cov=health_disease_model_training \
-                           --cov-report=xml \
-                           --cov-report=term
+                    export PYTHONPATH=$WORKSPACE:$PYTHONPATH && pytest -v --disable-warnings --maxfail=1 --cov=health_disease_model_training --cov-report=xml --cov-report=term
                 '''
             }
         }
