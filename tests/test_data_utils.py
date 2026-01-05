@@ -11,8 +11,8 @@ def test_prepare_dataframe_creates_target_and_lowercase():
 
     df = prepare_dataframe(X, y)
 
-    assert "target" in df.columns
-    assert df["target"].tolist() == [0, 1]
+    assert "sex" in df.columns
+    assert df["sex"].tolist() == [1, 0]
     assert all(col == col.lower() for col in df.columns)
 
 
