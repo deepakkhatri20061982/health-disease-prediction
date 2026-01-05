@@ -9,12 +9,12 @@ def test_train_and_log_with_mlflow(monkeypatch):
     # -----------------------------
     # Mock MLflow
     # -----------------------------
-    monkeypatch.setattr("health_disease_model_training.mlflow.set_experiment", MagicMock())
-    monkeypatch.setattr("health_disease_model_training.mlflow.start_run", MagicMock())
-    monkeypatch.setattr("health_disease_model_training.mlflow.log_metrics", MagicMock())
-    monkeypatch.setattr("health_disease_model_training.mlflow.log_params", MagicMock())
-    monkeypatch.setattr("health_disease_model_training.mlflow.log_artifact", MagicMock())
-    monkeypatch.setattr("health_disease_model_training.mlflow.sklearn.log_model", MagicMock())
+    monkeypatch.setattr("health_disease_model_training_v2.mlflow.set_experiment", MagicMock())
+    monkeypatch.setattr("health_disease_model_training_v2.mlflow.start_run", MagicMock())
+    monkeypatch.setattr("health_disease_model_training_v2.mlflow.log_metrics", MagicMock())
+    monkeypatch.setattr("health_disease_model_training_v2.mlflow.log_params", MagicMock())
+    monkeypatch.setattr("health_disease_model_training_v2.mlflow.log_artifact", MagicMock())
+    monkeypatch.setattr("health_disease_model_training_v2.mlflow.sklearn.log_model", MagicMock())
 
     # -----------------------------
     # Mock GridSearch
@@ -36,7 +36,7 @@ def test_train_and_log_with_mlflow(monkeypatch):
     }
 
     monkeypatch.setattr(
-        "health_disease_model_training.cross_validate",
+        "health_disease_model_training_v2.cross_validate",
         lambda *args, **kwargs: fake_cv
     )
 
