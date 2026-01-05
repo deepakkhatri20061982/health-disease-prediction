@@ -6,3 +6,5 @@ scikit-learn
 mlflow
 ucimlrepo
 joblib
+pytest
+pytest-cov
