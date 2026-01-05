@@ -2,9 +2,16 @@ pipeline {
     agent any
     
     stages {
-        stage('Clean Workspace') {
+        stage('Force Clean Workspace') {
             steps {
-                deleteDir()
+                script {
+                    def ws = pwd()
+                    bat """
+                        echo Cleaning workspace: %ws%
+                        rmdir /s /q "%ws%" || exit 0
+                        mkdir "%ws%"
+                    """
+                }
             }
         }
         stage("Install Dependencies") {
