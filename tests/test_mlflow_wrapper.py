@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from unittest.mock import MagicMock
 
-from health_disease_model_training import train_and_log_with_mlflow
+from health_disease_model_training_v2 import train_and_log_with_mlflow
 
 
 def test_train_and_log_with_mlflow(monkeypatch):

@@ -1,5 +1,5 @@
 from sklearn.model_selection import GridSearchCV, StratifiedKFold
-from health_disease_model_training import build_grid_search
+from health_disease_model_training_v2 import build_grid_search
 
 
 def test_build_grid_search_returns_gridsearch():
