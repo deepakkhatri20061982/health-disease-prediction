@@ -21,7 +21,20 @@ pipeline {
         }
         stage('Model Training') {
             steps {
-                sh 'python src/eda_Model_Updated_DK.py'
+                sh 'python health_disease_model_training_v2.py'
+            }
+        }
+        stage('Run Unit Tests') {
+            steps {
+                sh '''
+                    . venv/bin/activate
+                    pytest -v \
+                           --disable-warnings \
+                           --maxfail=1 \
+                           --cov=health_disease_model_training \
+                           --cov-report=xml \
+                           --cov-report=term
+                '''
             }
         }
     }   
